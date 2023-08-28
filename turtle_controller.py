@@ -38,7 +38,7 @@ if __name__=="__main__":
     rospy.init_node("turtle_controller")
     rospy.wait_for_service("/turtle1/set_pen")
     
-    pub =rospy.Publisher('/turtle1/cmd_vel',Twist, queue_size=10)
+    pub =rospy.Publisher('/turtle1/cmd_vel',Twist,queue_size=10)
     sub= rospy.Subscriber('/turtle1/pose',Pose,callback=pose_callback)
     rospy.loginfo("Node has been started.")
     rospy.spin()
