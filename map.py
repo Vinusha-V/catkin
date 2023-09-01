@@ -14,30 +14,7 @@ def pcd_to_geojson(input_pcd, output_geojson, config_file):
     orglon = config.get('map_origin', {}).get('longitude', 0.0)
     pcd = o3d.io.read_point_cloud(input_pcd)
     points = pcd.points
-    
 
-    # features = []  # List to store GeoJSON features
-    
-    # for point in points:
-    #     x, y, _ = point
-    #     lat, lon = xy2ll(x, y, orglat, orglon)
-
-    #     # Create a GeoJSON feature with "Point" geometry for each point
-    #     feature = {
-    #         "type": "Feature",
-    #         "geometry": {
-    #             "type": "Point",
-    #             "coordinates": [lon, lat]  # Longitude, Latitude
-    #         }
-    #     }
-
-    #     features.append(feature)
-
-    # # Create a GeoJSON feature collection
-    # geojson_data = {
-    #     "type": "FeatureCollection",
-    #     "features": features
-    # }
     coordinates = []
     for point in points:
         x, y, _ = point
